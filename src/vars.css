@@ -6,4 +6,6 @@
     --color-background: #4F1787;
 
     --font-robot: "Roboto";
+
+    overflow-x: hidden;
 }
