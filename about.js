@@ -10,7 +10,7 @@ function calculateAge() {
     const ageInMilliseconds = now - birthDate;
     const ageInYears = ageInMilliseconds / (1000 * 60 * 60 * 24 * 365.25);
 
-    return ageInYears.toFixed(10);
+    return ageInYears.toFixed(9);
 }
 
 function updateAge() {
