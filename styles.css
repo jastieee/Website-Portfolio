@@ -8,8 +8,6 @@
     --color-background: #4F1787;
 
     --font-robot: "Roboto";
-
-    overflow-x: hidden;
 }
 
 body {
@@ -19,18 +17,19 @@ body {
     background-color: var(--color-background);
     width: 100%;
     height: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: "Outfit", "Roboto", sans-serif;
-    
 }
+
 .text {
     margin-top: 8%;
-    font-size: 50px;
+    font-size: 2.5rem;
     color: var(--color-text);
     position: relative;
 }
@@ -41,14 +40,14 @@ body {
     position: relative;
     z-index: 1;
     align-items: center;
-    font-size: 50px;
+    font-size: 2.5rem;
     display: flex;
-
 }
+
 .title {
-    font-size: 100px;
+    font-size: 4rem;
     font-weight: bold;
-    margin-bottom: 33px;
+    margin-bottom: 2rem;
     font-family: var(--font-robot);
     display: flex;
     justify-content: center;
@@ -58,7 +57,6 @@ body {
     z-index: 1; 
     position: relative; 
 }
-
 
 @keyframes floating {
     0% {
@@ -72,41 +70,40 @@ body {
     }
 }
 
-.topBlur {
+.topBlur, .botBlur {
     position: absolute;
+    background: var(--color-dark);
+    filter: blur(100px);
+    z-index: 0;
+    transform: translate(-50%, -50%);
+}
+
+.topBlur {
     width: 50vw;
     height: 50vw;
     min-width: 350px;
     min-height: 350px;
     border-radius: 50%;
-    background: var(--color-dark);
-    filter: blur(100px);
-    z-index: 0;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 .botBlur {
-    position: absolute;
     width: 70vw;
     height: 50vw;
     min-width: 250px;
     min-height: 250px;
     border-radius: 50%;
-    background: var(--color-dark);
-    filter: blur(100px);
-    z-index: 0;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
 }
+
 .navibar {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 71px;
+    padding-top: 5rem;
     z-index: 2;
     margin: 0 10%;
 }
@@ -127,14 +124,14 @@ body {
 
 .items {
     display: flex;
-    gap: 50px;
+    gap: 3rem;
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
 .items a {
-    font-size: 30px;
+    font-size: 1.875rem;
     color: var(--color-text);
     text-decoration: none;
     transition: color 0.3s ease, transform 0.3s ease;
@@ -157,51 +154,46 @@ body {
         margin-right: 10%;
         flex-direction: column;
         align-items: flex-end;
-        gap: 11px;
+        gap: 0.7rem;
         z-index: 3;
-    }
-
-    .logo {
-        display: block;
-        cursor: pointer;
     }
 
     .items {
         display: none;
         flex-direction: column;
         align-items: center;
-        gap: 13px;
+        gap: 0.8rem;
     }
 }
+
 .all {
     position: relative;
     background-color: var(--color-secondary);
     border-radius: 15px;
-    padding: 50px;
-    margin-top: 200px;
+    padding: 3rem;
+    margin-top: 12.5rem;
     z-index: 1;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin: 0 10%;
     display: flex; 
     align-items: center; 
 }
 
 .about {
     color: var(--color-text);
-    font-size: 40px;
+    font-size: 2.5rem;
     font-weight: 700;
     letter-spacing: 1.75px;
     text-transform: uppercase;
     font-family: "Roboto";
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
     text-align: left;
     width: 100%;
     position: absolute;
-    padding-left: 20px;
-    top: 40px; 
+    padding-left: 1.25rem;
+    top: 2.5rem; 
     left: 62%;
-
 }
+
 .img {
     width: 50%; 
     height: auto;
@@ -215,17 +207,18 @@ body {
 }
 
 .paragraph {
-    font-size: 18px;
+    font-size: 1.125rem;
     line-height: 1.5;
     text-align: left; 
-    margin: 5px;
+    margin: 0.3125rem;
     color: whitesmoke;
     width: 50%; 
-    padding-left: 20px; 
+    padding-left: 1.25rem; 
 }
+
 .buttonContainer {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
 }
 
 .button {
@@ -234,14 +227,14 @@ body {
     font-weight: bold;
     border: none;
     border-radius: 5px; 
-    font-size: 16px;
+    font-size: 1rem;
     cursor: pointer;
     text-align: center;
     text-decoration: none; 
     transition: background-color 0.3s ease, box-shadow 0.3s ease; 
-    padding: 10px 20px;
+    padding: 0.625rem 1.25rem;
     position: absolute;
-    bottom: 40px;
+    bottom: 2.5rem;
     left: 65%;
 }
 
@@ -254,35 +247,21 @@ body {
     height: fit-content;
     margin-top: 5%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     grid-gap: 1.5vw;
     margin-left: 2%;
     margin-right: 2%;
-  }
-  @media (max-width: 1100px) {
-    .projects #projects-container {
-      grid-template-columns: 1fr 1fr;
-      grid-gap: 3vw;
-    }
-  }
-  @media (max-width: 767px) {
-    .projects #projects-container {
-      grid-template-columns: 1fr;
-      grid-gap: 4vw;
-    }
-  }
+}
+
 .project {
-    flex: 1 1 calc(30% - 70px); 
     box-sizing: border-box; 
-    padding: 30px;
+    padding: 1.875rem;
     border: 2px solid #ddd;
     border-radius: 12px; 
-    background: linear-gradient(90deg, var(--color-background) 0%, var(--color-dark) 100%); /* Linear gradient background */
+    background: linear-gradient(90deg, var(--color-background) 0%, var(--color-dark) 100%);
     color: white; 
     transition: transform 0.3s, box-shadow 0.3s; 
     margin-top: 20%;
-
 }
 
 .project:hover {
@@ -291,16 +270,15 @@ body {
 }
 
 .protitle {
-    font-size: 40px; 
+    font-size: 2.5rem; 
     font-weight: 700;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    margin-bottom: 15px; 
+    margin-bottom: 1.25rem; 
     color: var(--color-text);
     margin-top: 5%;
     position: absolute;
     left: 42%;
-    margin: 5px 0;
 }
 
 .tag {
@@ -313,7 +291,7 @@ body {
 }
 
 .visit {
-    margin-top: 15px;
+    margin-top: 1.25rem;
 }
 
 .visit button {
@@ -321,9 +299,9 @@ body {
     color: white;
     border: none;
     border-radius: 5px;
-    padding: 10px 15px;
+    padding: 0.625rem 0.9375rem;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 1rem;
     transition: background-color 0.3s; 
 }
 
@@ -333,15 +311,14 @@ body {
 }
 
 .seeMore {
-    margin-top: 30px; 
+    margin-top: 1.875rem; 
     text-align: center;
     width: 100%;
-    margin-left: 5px;
 }
 
 .seeMore button {
-    padding: 20px 54px; 
-    font-size: 20px;
+    padding: 1.25rem 3.375rem; 
+    font-size: 1.25rem;
     background-color: #0056b3;
     color: #fff;
     border: none;
@@ -356,86 +333,68 @@ body {
 
 .container {
     color: var(--color-text);
-    margin-top: 120px;
+    margin-top: 7.5rem;
     background-color: var(--color-secondary);
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     width: 100%;
-    padding: 58px 10%;
+    padding: 3.625rem 10%;
     gap: 10px;
     overflow-x: hidden;
 }
 
 .text {
-  flex: 1;
-  min-width: 300px;
+    flex: 1;
+    min-width: 300px;
 }
 
 .text h2 {
-  font-size: 3rem;
-  margin-bottom: 20px;
-  color: white;
-  text-transform: uppercase;
-  font-weight: bold;
+    font-size: 3rem;
+    margin-bottom: 1.25rem;
+    color: white;
 }
 
 .text p {
-  font-size: 1.5rem;
-  margin: 0;
-  color: white;
+    font-size: 1.25rem;
 }
 
-.links {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  gap: 20px; 
+@media (max-width: 800px) {
+    .text h2 {
+        font-size: 2.5rem;
+    }
+
+    .text p {
+        font-size: 1rem;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem;
+    }
+
+    .img {
+        width: 100%;
+        margin: 0;
+    }
 }
 
-.link {
-  display: flex;
-  align-items: center;
-}
+@media (max-width: 600px) {
+    .text h2 {
+        font-size: 2rem;
+    }
 
-.link img {
-  width: 60px; 
-  height: 60px;
-  transition: transform 0.3s ease;
-  cursor: pointer;
-  gap: 20px;
-}
+    .text p {
+        font-size: 0.875rem;
+    }
 
-.link .fb {
-    width: 80px;
-    height: 80px;
-}
-.link img:hover {
-  transform: scale(1.5); 
-}
+    .projects #projects-container {
+        grid-template-columns: 1fr;
+    }
 
-@media screen and (max-width: 830px) {
-  .container {
-    flex-direction: column;
-    text-align: center;
-    gap: 40px;
-  }
-
-  .text h2 {
-    font-size: 2.5rem;
-  }
-
-  .text p {
-    font-size: 1.3rem;
-  }
-
-  .links {
-    justify-content: center;
-  }
-}
-html {
-    scroll-behavior: smooth;
+    .all, .about {
+        margin: 0;
+        padding: 1rem;
+    }
 }
